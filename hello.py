@@ -7,7 +7,3 @@ print("add text")
 print("push GitHub!")
 
 print("push2")
-
-
-
-DBFND DGNDG
