@@ -14,14 +14,18 @@ Optional = {
   "platformVersion": "6.0.1",
   "deviceName": "网易模拟器",
   "automationName": "Appium",
-  "appPackage": "com.xueqiu.android",
-  "appActivity": ".common.MainActivity",
+  "appPackage": "com.tencent.wework",
+  "appActivity": ".launch.LaunchSplashActivity",
   "noReset": True
 }
 
 driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", Optional)
 driver.implicitly_wait(10)
-el2 = driver.find_element_by_id("com.xueqiu.android:id/tv_search")
+el2 = driver.find_element_by_xpath("//*[@resource-id='com.tencent.wework:id/gfj']//*[@text='通讯录']")
 el2.click()
-el3 = driver.find_element_by_id("com.xueqiu.android:id/search_input_text")
-el3.send_keys("阿里巴巴")
+el3 = driver.find_element_by_xpath("//*[@text='添加成员']")
+el3.click()
+
+
+
+driver.quit()
