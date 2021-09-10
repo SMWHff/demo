@@ -11,20 +11,16 @@ from appium import webdriver
 
 Optional = {
   "platformName": "Android",
-  "platformVersion": "6.0.1",
-  "deviceName": "网易模拟器",
+  "platformVersion": "5.1.1",
+  "deviceName": "雷电模拟器",
   "automationName": "Appium",
-  "appPackage": "com.tencent.wework",
-  "appActivity": ".launch.LaunchSplashActivity",
+  "browserName": "Browser",
   "noReset": True
 }
 
 driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", Optional)
 driver.implicitly_wait(10)
-el2 = driver.find_element_by_xpath("//*[@resource-id='com.tencent.wework:id/gfj']//*[@text='通讯录']")
-el2.click()
-el3 = driver.find_element_by_xpath("//*[@text='添加成员']")
-el3.click()
+driver.get("https://m.baidu.com")
 
 
 
