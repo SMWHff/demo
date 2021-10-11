@@ -19,31 +19,13 @@
 """
 
 
-class AddChain:
-    """
-    链式加法类
-    """
-    data = 0
-
-    # 实例化类时触发，并获取实例化参数
-    def __init__(self, n: int):
-        self.data += n
-
-    # 使用 == 比较时触发， other 为等号右边的值
-    def __eq__(self, other):
-        return self.data == other
-
-    # 被调用时触发，返回自身，实现无限链式调用
+class add_chain(int):
     def __call__(self, n: int):
-        self.data += n
-        return self
-
-
-def add_chain(n: int):
-    return AddChain(n)
-
+        return add_chain(self + n)
 
 assert add_chain(1) == 1
 assert add_chain(1)(2) == 3
 assert add_chain(1)(2)(3) == 6
-assert add_chain(1)(2)(3)(4) == 10
+assert add_chain(1)(2)(3)(6) == 12
+assert add_chain(1)(2)(3) + 10 == 16
+
